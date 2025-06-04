@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayerLog - Login</title>
+    <link rel="stylesheet" href="../../style/auth.css">
+</head>
+<body>
+    <form id="login-form">
+        <div class="login-box">
+            <img src="../../assets/image/LOGO.png" alt="Logo" class="logo">
+        </div>
+
+        <h1>Login</h1>
+
+        <div class="float">
+            <input type="text" id="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="float">
+            <input type="password" id="password" name="password" required>
+            <label for="password">Senha</label>
+            <img class="eye-open" src="../../assets/image/icon-eye-closed.svg" alt="Mostrar senha">
+        </div>
+
+        <div class="justify-center remember">
+            <input class="input-remember" type="checkbox" id="remember">
+            <label for="remember">Lembrar-me</label>
+        </div>
+
+        <div class="justify-center">
+            <button type="submit">Entrar</button>
+        </div>
+        
+        <div class="toast"></div>
+        
+        <div class="dont-have">
+            <p>Não possui uma conta?</p>
+            <a href="../sing-up/sing-up.html">Cadastre-se</a>
+        </div>
+    </form>
+
+    <script src="login.js" type="module"></script>
+</body>
+</html>

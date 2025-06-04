@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - PlayerLog</title>
+    <link rel="stylesheet" href="../../style/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="../../style/header.css">
+    <link rel="stylesheet" href="../../style/profile.css">
+</head>
+<body>
+    <header class="profile-header-nav">
+        <nav id="navbar">
+            <div class="logo-container">
+                <a href="../../index.html">
+                    <img src="../../assets/image/LOGO.png" id="nav_logo" alt="PlayerLog Logo" width="120">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="avatar-container">
+                <img id="profile-avatar" src="https://via.placeholder.com/150" alt="Avatar do Usuário">
+                <button class="edit-avatar" aria-label="Editar Avatar">✏️</button>
+            </div>
+            <h1 id="profile-username">Usuário</h1>
+        </div>
+
+        <div class="profile-tabs">
+            <button class="tab-button active" data-tab="favorites">FAVORITOS</button>
+            <button class="tab-button" data-tab="liked">CURTIDOS</button>
+            <button class="tab-button" data-tab="disliked">NÃO GOSTEI</button>
+            <button class="tab-button" data-tab="later">JOGAR MAIS TARDE</button>
+        </div>
+
+        <div class="tab-content active" id="favorites-tab">
+        </div>
+        <div class="tab-content hidden" id="liked-tab">
+        </div>
+        <div class="tab-content hidden" id="disliked-tab">
+        </div>
+        <div class="tab-content hidden" id="later-tab">
+        </div>
+    </div>
+
+    <script src="../../javascript/auth.js" type="module"></script>
+    <script src="profile.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayerLog - Sua Plataforma de Jogos</title>
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav id="navbar">
+        <img src="assets/image/LOGO.png" id="nav_logo" alt="PlayerLog Logo" width="120">
+        
+        <ul id="nav_list">
+            <li class="nav-item active"><a href="#" data-tab="games">JOGOS</a></li>
+            <li class="nav-item"><a href="#" data-tab="favorites">FAVORITOS</a></li>
+            <li class="nav-item"><a href="#" data-tab="later">MAIS TARDE</a></li>
+        </ul>
+
+        <div id="search-box">
+            <input type="text" class="search-txt" placeholder="pesquisar...">
+            <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div id="auth-buttons">
+            <a href="pages/login/login.html" id="login-btn" class="user-btn">
+                <i class="ri-user-fill"></i>
+                <span>Entrar</span>
+            </a>
+            <a href="pages/sing-up/sing-up.html" class="register-btn">Cadastrar-se</a>
+        </div>
+
+        <div id="user-profile" style="display: none;">
+            <div class="user-info">
+                <img src="assets/image/avatar.png" id="user-avatar" alt="Avatar">
+                <span id="username">Usuário</span>
+            </div>
+            <button id="logout-btn" title="Sair">
+                <img src="assets/image/logout.png" alt="Sair">
+            </button>
+            
+            <div class="user-profile-menu">
+                <a href="pages/profile/profile.html"><i class="ri-user-line"></i> Meu Perfil</a>
+                <a href="#" id="settings-link"><i class="ri-settings-3-line"></i> Configurações</a>
+                <hr>
+                <a href="#" id="logout-menu-btn" class="logout-item">
+                    <i class="ri-logout-box-r-line"></i> Sair
+                </a>
+            </div>
+
+            <div id="settings-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal">×</span>
+                    <h2>Configurações</h2>
+                    <div class="settings-section">
+                        <h3>Alterar Foto de Perfil</h3>
+                        <div class="custom-file-upload">
+                            <input type="file" id="avatar-input" accept="image/*">
+                            <label for="avatar-input"><i class="fas fa-upload"></i> Escolher Arquivo</label>
+                            <span class="file-name"></span>
+                        </div>
+                        <button id="save-avatar-btn">Salvar</button>
+                    </div>
+                    <div class="settings-section">
+                        <h3>Alterar Nome</h3>
+                        <input type="text" id="username-input" placeholder="Novo nome">
+                        <button id="save-username-btn">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <i id="menu-toggle" class="fas fa-bars"></i>
+    </nav>
+</header>
+
+    <main>
+        <div id="loading" class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Carregando jogos...</p>
+        </div>
+        
+        <div id="error-message" class="error-message" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p></p>
+        </div>
+
+        <div class="tab-content active" id="games-tab">
+            <div id="games-container" class="games-container">
+            </div>
+        </div>
+        <div class="tab-content hidden" id="favorites-tab">
+        </div>
+        <div class="tab-content hidden" id="later-tab">
+        </div>
+    </main>
+
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', async () => {
+            const authModule = await import('./javascript/auth.js');
+            
+            document.getElementById('login-btn').addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = "pages/login/login.html";
+            });
+
+            setTimeout(() => {
+                authModule.updateAuthUI();
+            }, 100);
+        });
+    </script>
+    
+    <script type="module" src="javascript/script.js"></script>
+</body>
+</html>

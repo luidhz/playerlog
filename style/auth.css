@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/background/background-gamer.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 150px;
+}
+
+form {
+    width: 400px;
+    background-color: #081623;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    color: white;
+    animation: fadeIn 0.5s ease-out;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.float {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.float input {
+    width: 100%;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 2px solid #67c1f5;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.float input:focus {
+    border-bottom-color: white;
+}
+
+.float label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.float input:focus + label,
+.float input:not(:placeholder-shown) + label {
+    top: -15px;
+    font-size: 12px;
+    color: #67c1f5;
+}
+
+.eye-open, .eye-open-confirm {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #67c1f5;
+    color: #081623;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #4d9fd1;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.remember input {
+    margin-right: 8px;
+}
+
+.dont-have, .already-have {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.dont-have a, .already-have a {
+    color: #67c1f5;
+    margin-left: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toast {
+    display: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.toast.error {
+    background-color: rgba(231, 76, 60, 0.8);
+    color: white;
+}
+
+.toast.success {
+    background-color: rgba(46, 204, 113, 0.8);
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hint {
+    display: none;
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.float {
+    margin-bottom: 25px;
+}
+
+.eye-open, .eye-open-confirm {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s;
+}
+
+.eye-open:hover, .eye-open-confirm:hover {
+    opacity: 0.8;
+}
